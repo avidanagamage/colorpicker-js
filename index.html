@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test</title>
+    <script src="picker.ts"></script>
+    <style>
+        .color-pallet {
+            height: auto;
+            width: 172px;
+            position: absolute;
+            border: solid 1px;
+            display: none;
+        }
+
+        .color-box {
+            height: 30px;
+            width: 30px;
+            margin: 2px;
+            float: left;
+            position: relative;
+        }
+
+        .color-box.selected::before {
+            background-image: url(tick.png);
+            height: 16px;
+            width: 16px;
+            content: ' ';
+            margin: 6px auto;
+            display: block;
+        }
+
+        .color-picker.open .color-pallet {
+            display: block;
+        }
+
+        .color-picker button {
+            padding: 2px;
+            display: flex;
+            background-color: white;
+            border-width: 1px;
+            border-style: solid;
+            outline: none;
+        }
+
+        .color-picker button>span {
+            height: 25px;
+            width: 25px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="color-picker" value="" />
+    <script>
+        var picker = new colorPicker({
+            id: 'color-picker',
+            colors: [
+                'black', 'white', 'bisque', 'orange', 'gray',
+                'red', 'yellow', 'green', 'blue', 'pink'
+            ],
+            defaultColor: 'yellow'
+        });
+    </script>
+</body>
+
+</html>
